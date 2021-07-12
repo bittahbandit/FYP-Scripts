@@ -1,0 +1,97 @@
+Gaussian process regression works by
+00:05
+extending the idea of a probability
+00:07
+distribution of numbers to a probability
+00:10
+distribution of functions
+00:14
+when we sample an n-dimensional normal
+00:16
+distribution we get n numbers which we
+00:20
+typically think of as a point in
+00:21
+n-dimensional space
+00:24
+but we can also think of them as the
+00:26
+values of a function sampled at
+00:29
+endpoints
+00:31
+if we let n get larger and larger we get
+00:35
+better and better resolution of the
+00:36
+function
+00:39
+theoretically a function is therefore
+00:42
+fully represented by a point in an
+00:44
+infinite dimensional space although a
+00:47
+large value of n is sufficient for
+00:49
+practical purposes
+00:52
+points in a finite dimensional space can
+00:55
+be sampled from a probability
+00:56
+distribution determined by a mean vector
+00:59
+and covariance matrix similarly we can
+01:04
+have a probability distribution of
+01:06
+functions determined by a mean function
+01:09
+and a covariance function
+01:13
+for Gaussian process regression the
+01:15
+covariance function is determined by a
+01:18
+chosen kernel function that describes
+01:20
+how much influence one point has on
+01:23
+another
+01:25
+this effectively determines the
+01:27
+smoothness of the functions in the
+01:29
+distribution
+01:32
+given a set of data points we can fit a
+01:35
+probability distribution to them by
+01:38
+choosing the distribution parameters to
+01:41
+match the properties of the distribution
+01:42
+to the properties of the data similarly
+01:46
+given a set of function values we can
+01:49
+fit a probability distribution of
+01:51
+functions that closely match the given
+01:54
+function values
+01:57
+considering the hole fitted distribution
+01:59
+of functions we can determine the mean
+02:01
+as well as a confidence interval this
+02:05
+gives us not only our regression
+02:07
+function but probabilistic bounds on the
+02:10
+prediction

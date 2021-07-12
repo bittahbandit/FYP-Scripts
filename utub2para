@@ -1,0 +1,171 @@
+ let's
+01:38
+first look back on distributions over
+01:40
+vectors so you probably remember
+01:43
+Bayesian inference where we put a prior
+01:46
+on our data and then after having
+01:49
+observed some data points we can then
+01:51
+refine our belief and derive a posterior
+01:54
+distribution of our data so one possible
+01:57
+prior is a multivariate Gaussian
+01:59
+distribution which is defined by a mean
+02:01
+and a covariance remember if we sample a
+02:04
+large number of data points from the
+02:06
+distributions the histogram will look a
+02:08
+lot like the probability density here we
+02:11
+can see an example for a one dimension
+02:13
+Gaussian with mean zero and Sigma 1 and
+02:18
+let's say we observe some data points
+02:21
+for example here here here here and here
+02:27
+then the posterior distribution would
+02:30
+probably look something like that
+02:35
+roughly we can also do this for multiple
+02:39
+dimensions in the lecture on
+02:41
+multivariate normal or Gaussian
+02:42
+distributions you also looked at some
+02:45
+properties like what happens when you
+02:47
+marginalize out one of the dimensions
+02:50
+while you condition on a subset of the
+02:52
+dimensions all of these things will be
+02:55
+important for Gaussian processes now how
+02:58
+do we get from distributions over
+02:59
+vectors to functions in a sense a
+03:02
+function is an infinitely long vector of
+03:05
+values there's a pretty nice intuitive
+03:07
+explanation for how to get from one
+03:11
+dimensional two dimensional Gaussian to
+03:14
+functions and you will find this in a
+03:20
+video here so if we interpret the
+03:23
+function as essentially a very long
+03:26
+vector of values then we can use our
+03:29
+Gaussian distributions over vectors to
+03:32
+model a distribution over functions and
+03:35
+in this picture you see the result of
+03:38
+such a distribution we have our data
+03:40
+from before and ten draws from a
+03:42
+Gaussian process you can see that for
+03:47
+input 1.8 we seem to pre pretty certain
+03:50
+about what the output should be as
+03:52
+basically all functions go through a
+03:54
+very narrow range and for 3.5 we have
+03:58
+multiple possibilities in a larger range
+04:01
+for the output but let's look at what a
+04:03
+Gaussian process is a little more
+04:05
+formally so a Gaussian process describes
+04:11
+a distribution over functions and it is
+04:14
+defined by a mean function and by a
+04:16
+covariance function and we'll talk about
+04:19
+what both of these mean and
+04:22
+notice how even the notation here is a
+04:26
+very similar to what we know from
+04:28
+multivariate gaussians where we'll have
+04:31
+mean mu and covariance Sigma so we said
+04:39
+earlier that a function is basically an
+04:41
+infinitely long vector which means that
+04:44
+a Gaussian process is basically a
+04:47
+multivariate normal with an infinite
+04:50
+number of dimensions however we can't
+04:53
+really work with an infinite number of
+04:55
+dimensions and we are saved by a
+04:57
+property of the multivariate Gaussian
+04:59
+and that is if we take a subset of the
+05:02
+dimensions then these will be jointly
+05:04
+Gaussian distributed as well this will
+05:07
+also help us to sample from a Gaussian
+05:09
+process because we can just take a
+05:12
+certain number of data points say 100
+05:15
+compute the me function and covariance
+05:18
+function for those data points and then
+05:21
+sample from the respective joint
+05:23
+Gaussian distribution so that was a
+05:25
+formal definition informally what we are
+05:28
+trying to do with the Gaussian process
+05:30
+is to encode that if we have two vectors
+05:34
+that are close to each other then the
+05:36
+function values should be similar to the
+05:38
+covariance function K takes care of that
+05:40
+by returning a measure of the similarity
